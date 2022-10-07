@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class ="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    
+        <h2>Table Of Publicly Accessible Comments</h2>
+        <table id="myTable" class="table">
+          <thead>
+            <tr>
+              <th>Comment</th>
+              <th>Date Posted </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I like this site.</td>
+              <td>	10/5/2022</td>
+
+            </tr>
+            <tr>
+              <td>I love the color of this site.</td>
+              <td>	10/6/2022</td>
+
+            </tr>
+            <tr>
+              <td>Who made this site?</td>
+              <td>10/6/2022</td>
+
+            </tr>
+          </tbody>
+        </table>
+    </div>
+   
+    <div class="col-sm-4"></div>
+
+    </div>
+
+    <div class ="row">
+
+    <div id="commentButton">
+
+    <input type="text" id="addComment" class="btn" placeholder="Insert Comment Here">
+    <button type ="button" class="btn" onclick="addComment()">Add My Comment</button>
+
+    </div>
+
+    </div>
+</div>
+    <script>
+        function addComment(){
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = document.getElementById("addComment").value;
+        cell2.innerHTML = new Date().toLocaleDateString(); //date goes here
+        document.getElementById('addComment').value = '' //This clear the text field after button is submitted
+        }
+
+        </script>
+</body>
+</html>
